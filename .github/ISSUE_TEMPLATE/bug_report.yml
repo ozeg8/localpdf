@@ -1,0 +1,36 @@
+name: Bug report / Hata bildirimi
+description: Report a reproducible problem using synthetic files only.
+title: "bug: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Do not attach personal documents, passwords, tokens or sensitive screenshots.
+        Use generated sample documents. For security issues, read SECURITY.md first.
+  - type: input
+    id: version
+    attributes:
+      label: Version / commit
+      placeholder: v0.1.0 or commit SHA
+    validations:
+      required: true
+  - type: input
+    id: browser
+    attributes:
+      label: Browser and operating system
+      placeholder: Chrome version, Windows/macOS/Linux/Android/iOS
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      description: Explain the tool, settings and a synthetic example.
+    validations:
+      required: true
+  - type: textarea
+    id: behavior
+    attributes:
+      label: Expected and actual behavior
+    validations:
+      required: true

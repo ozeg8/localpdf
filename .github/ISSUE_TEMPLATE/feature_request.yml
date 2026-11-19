@@ -1,0 +1,22 @@
+name: Feature request / Özellik önerisi
+description: Suggest a browser-local PDF improvement.
+title: "feat: "
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What user problem would this solve?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed behavior
+      description: Keep the workflow simple; avoid uploads and paid services.
+    validations:
+      required: true
+  - type: textarea
+    id: privacy
+    attributes:
+      label: Privacy and offline considerations
+      description: Can the work happen entirely in the browser?

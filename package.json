@@ -1,0 +1,42 @@
+{
+  "name": "localpdf",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "description": "Your Files. Your Device. Your Privacy.",
+  "engines": { "node": ">=22.18.0" },
+  "scripts": {
+    "diagnose": "node scripts/diagnose.mjs",
+    "screenshots": "node scripts/screenshots.mjs",
+    "check:repository": "node scripts/check-repository.mjs",
+    "package:source": "node scripts/package-source.mjs",
+    "dev": "vite --host 127.0.0.1",
+    "build": "tsc --noEmit && vite build && node scripts/licenses.mjs && node scripts/finalize-build.mjs",
+    "preview": "vite preview --host 127.0.0.1",
+    "typecheck": "tsc --noEmit",
+    "test": "node --test tests/contracts.test.ts tests/client.test.ts tests/policy.test.mjs tests/engine.test.ts tests/repository-layout.test.mjs",
+    "test:policy": "node --test tests/contracts.test.ts tests/client.test.ts tests/policy.test.mjs",
+    "test:e2e": "playwright test",
+    "scan:secrets": "node scripts/scan-secrets.mjs",
+    "licenses": "node scripts/licenses.mjs",
+    "check": "npm run typecheck && npm test && npm run scan:secrets && npm run licenses && npm run build && npm run test:e2e"
+  },
+  "dependencies": {
+    "fflate": "0.8.2",
+    "pdf-lib": "1.17.1",
+    "pdfjs-dist": "6.5.438",
+    "react": "19.3.1",
+    "react-dom": "19.3.1"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.59.1",
+    "@tailwindcss/vite": "4.3.5",
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "tailwindcss": "4.3.5",
+    "typescript": "6.0.3",
+    "vite": "8.3.8"
+  }
+}
